@@ -85,6 +85,10 @@
 		59A2AFA015870EB9002765BA /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A2AF9F15870EB8002765BA /* Config.m */; };
 		D00297731A30862D009EB8B1 /* NSRRequest+Multipart.h in Headers */ = {isa = PBXBuildFile; fileRef = D00297711A30862D009EB8B1 /* NSRRequest+Multipart.h */; };
 		D00297741A30862D009EB8B1 /* NSRRequest+Multipart.m in Sources */ = {isa = PBXBuildFile; fileRef = D00297721A30862D009EB8B1 /* NSRRequest+Multipart.m */; };
+		D00297791A309786009EB8B1 /* NSRRemoteObject+Parameters.h in Headers */ = {isa = PBXBuildFile; fileRef = D00297751A309786009EB8B1 /* NSRRemoteObject+Parameters.h */; };
+		D002977A1A309786009EB8B1 /* NSRRemoteObject+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = D00297761A309786009EB8B1 /* NSRRemoteObject+Parameters.m */; };
+		D002977B1A309786009EB8B1 /* NSRRequestParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = D00297771A309786009EB8B1 /* NSRRequestParameters.h */; };
+		D002977C1A309786009EB8B1 /* NSRRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = D00297781A309786009EB8B1 /* NSRRequestParameters.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +167,10 @@
 		59EC6A671572A24A00AA6D79 /* Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Test.xcdatamodel; sourceTree = "<group>"; };
 		D00297711A30862D009EB8B1 /* NSRRequest+Multipart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRRequest+Multipart.h"; sourceTree = "<group>"; };
 		D00297721A30862D009EB8B1 /* NSRRequest+Multipart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRRequest+Multipart.m"; sourceTree = "<group>"; };
+		D00297751A309786009EB8B1 /* NSRRemoteObject+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRRemoteObject+Parameters.h"; sourceTree = "<group>"; };
+		D00297761A309786009EB8B1 /* NSRRemoteObject+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRRemoteObject+Parameters.m"; sourceTree = "<group>"; };
+		D00297771A309786009EB8B1 /* NSRRequestParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRRequestParameters.h; sourceTree = "<group>"; };
+		D00297781A309786009EB8B1 /* NSRRequestParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRRequestParameters.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +296,10 @@
 		5993AF741575CD6E00DA25F4 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				D00297751A309786009EB8B1 /* NSRRemoteObject+Parameters.h */,
+				D00297761A309786009EB8B1 /* NSRRemoteObject+Parameters.m */,
+				D00297771A309786009EB8B1 /* NSRRequestParameters.h */,
+				D00297781A309786009EB8B1 /* NSRRequestParameters.m */,
 				5993AF7E1575CD6E00DA25F4 /* NSRails.h */,
 				5993AF7F1575CD6E00DA25F4 /* NSRConfig.h */,
 				5993AF801575CD6E00DA25F4 /* NSRConfig.m */,
@@ -374,7 +386,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5993AF9E1575CD6E00DA25F4 /* NSRails.h in Headers */,
+				D00297791A309786009EB8B1 /* NSRRemoteObject+Parameters.h in Headers */,
 				5993AFA11575CD6E00DA25F4 /* NSRConfig.h in Headers */,
+				D002977B1A309786009EB8B1 /* NSRRequestParameters.h in Headers */,
 				D00297731A30862D009EB8B1 /* NSRRequest+Multipart.h in Headers */,
 				5993AFB01575CD6E00DA25F4 /* NSRRemoteObject.h in Headers */,
 				598D217615800AC2002CC996 /* NSRRequest.h in Headers */,
@@ -716,8 +730,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5993AFA41575CD6E00DA25F4 /* NSRConfig.m in Sources */,
+				D002977C1A309786009EB8B1 /* NSRRequestParameters.m in Sources */,
 				5993AFB31575CD6E00DA25F4 /* NSRRemoteObject.m in Sources */,
 				D00297741A30862D009EB8B1 /* NSRRequest+Multipart.m in Sources */,
+				D002977A1A309786009EB8B1 /* NSRRemoteObject+Parameters.m in Sources */,
 				598D217915800AC2002CC996 /* NSRRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
