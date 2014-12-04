@@ -160,6 +160,14 @@ typedef NS_ENUM(NSInteger, NSRRailsVersion) {
  */
 @property (nonatomic) NSTimeInterval timeoutInterval;
 
+/**
+ 
+Allow PATCH/PUT requests to update the local object with the server response. Needed for optimistic locking in multi tennant environment.
+*/
+
+@property (nonatomic) BOOL setsPropertiesOnUpdate;
+
+ 
 
 
 /// =============================================================================================
@@ -376,6 +384,7 @@ typedef NS_ENUM(NSInteger, NSRRailsVersion) {
  @see dateFormat.
  */
 - (NSDate *) dateFromString:(NSString *)string;
+
 
 @end
 

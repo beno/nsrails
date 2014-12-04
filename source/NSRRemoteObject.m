@@ -521,7 +521,11 @@
 
 - (BOOL) remoteUpdate:(NSError **)error
 {
-    return !![[NSRRequest requestToUpdateObject:self] sendSynchronous:error];
+    id result = [[NSRRequest requestToUpdateObject:self] sendSynchronous:error];
+    if (result && [self.class config].setsPropertiesOnUpdate) {
+        [self setPropertiesUsingRemoteDictionary:result];
+    }
+    return !!result;
 }
 
 - (void) remoteUpdateAsync:(NSRBasicCompletionBlock)completionBlock
@@ -529,6 +533,9 @@
     [[NSRRequest requestToUpdateObject:self] sendAsynchronous:
      ^(id result, NSError *error) 
      {
+         if (result && [self.class config].setsPropertiesOnUpdate) {
+             [self setPropertiesUsingRemoteDictionary:result];
+         }
          if (completionBlock) {
              completionBlock(error);
          }
@@ -539,7 +546,12 @@
 
 - (BOOL) remoteReplace:(NSError **)error
 {
-    return !![[NSRRequest requestToReplaceObject:self] sendSynchronous:error];
+    id result = [[NSRRequest requestToReplaceObject:self] sendSynchronous:error];
+    if (result && [self.class config].setsPropertiesOnUpdate) {
+        [self setPropertiesUsingRemoteDictionary:result];
+    }
+    return !!result;
+
 }
 
 - (void) remoteReplaceAsync:(NSRBasicCompletionBlock)completionBlock
@@ -547,6 +559,9 @@
     [[NSRRequest requestToReplaceObject:self] sendAsynchronous:
      ^(id result, NSError *error) 
      {
+         if (result && [self.class config].setsPropertiesOnUpdate) {
+             [self setPropertiesUsingRemoteDictionary:result];
+         }
          if (completionBlock) {
              completionBlock(error);
          }
