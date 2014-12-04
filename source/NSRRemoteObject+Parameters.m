@@ -10,7 +10,7 @@
 
 @implementation NSRRemoteObject (Parameters)
 
-+ (void) remoteObjectWithParametersViaObject:(NSRRemoteObject *)obj params:(NSRRequestParameters *)params async:(NSRFetchAllCompletionBlock)completionBlock
++ (void) remoteAllWithParametersViaObject:(NSRRemoteObject *)obj params:(NSRRequestParameters *)params async:(NSRFetchAllCompletionBlock)completionBlock
 {
     NSRRequest *request = [NSRRequest requestToFetchAllObjectsOfClass:self viaObject:obj];
     [request setQueryParameters:params.requestDictionary];
@@ -21,12 +21,12 @@
      }];
 }
 
-+ (void) remoteObjectWithParameters:(NSRRequestParameters *)params async:(NSRFetchAllCompletionBlock)completionBlock
++ (void) remoteAllWithParameters:(NSRRequestParameters *)params async:(NSRFetchAllCompletionBlock)completionBlock
 {
-    [self remoteObjectWithParametersViaObject:nil params:params async:completionBlock];
+    [self remoteAllWithParametersViaObject:nil params:params async:completionBlock];
 }
 
-+ (NSArray *) remoteObjectWithParametersViaObject:(NSRRemoteObject *)obj params:(NSRRequestParameters *)params error:(NSError *__autoreleasing *)error
++ (NSArray *) remoteAllWithParametersViaObject:(NSRRemoteObject *)obj params:(NSRRequestParameters *)params error:(NSError *__autoreleasing *)error
 {
     NSRRequest *request = [NSRRequest requestToFetchAllObjectsOfClass:self viaObject:obj];
     [request setQueryParameters:params.requestDictionary];
@@ -34,9 +34,9 @@
 	return [self objectsWithRemoteDictionaries:json];
 }
 
-+(NSArray *)remoteObjectWithParameters:(NSRRequestParameters *)params error:(NSError *__autoreleasing *)error
++ (NSArray *) remoteAllWithParameters:(NSRRequestParameters *)params error:(NSError *__autoreleasing *)error
 {
-    return [self remoteObjectWithParametersViaObject:nil params:params error:error];
+    return [self remoteAllWithParametersViaObject:nil params:params error:error];
 }
 
 @end

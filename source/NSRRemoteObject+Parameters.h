@@ -12,9 +12,9 @@
 
 @interface NSRRemoteObject (Parameters)
 
-+ (NSArray *) remoteObjectWithParameters:(NSRRequestParameters *)params error:(NSError **)error;
-+ (NSArray *) remoteObjectWithParametersViaObject:(NSRRemoteObject *)obj params:(NSRRequestParameters *)params error:(NSError **)error;
-+ (void) remoteObjectWithParameters:(NSRRequestParameters *)params async:(NSRFetchAllCompletionBlock)completionBlock;
-+ (void) remoteObjectWithParametersViaObject:(NSRRemoteObject *)obj params:(NSRRequestParameters *)params async:(NSRFetchAllCompletionBlock)completionBlock;
++ (NSArray *) remoteAllWithParameters:(NSRRequestParameters *)params error:(NSError **)error;
++ (NSArray *) remoteAllWithParametersViaObject:(NSRRemoteObject *)obj params:(NSRRequestParameters *)params error:(NSError **)error;
++ (void) remoteAllWithParameters:(NSRRequestParameters *)params async:(NSRFetchAllCompletionBlock)completionBlock;
++ (void) remoteAllWithParametersViaObject:(NSRRemoteObject *)obj params:(NSRRequestParameters *)params async:(NSRFetchAllCompletionBlock)completionBlock;
 
 @end
