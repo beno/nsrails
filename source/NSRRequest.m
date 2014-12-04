@@ -128,10 +128,15 @@ NSString * const NSRNullRemoteIDException   = @"NSRNullRemoteIDException";
     self.body = [obj remoteDictionaryRepresentationWrapped:YES];
 }
 
+- (BOOL) bodyIsValid:(id)body
+{
+    return body && ([body isKindOfClass:[NSString class]] || [NSJSONSerialization isValidJSONObject:body] || [body isKindOfClass:[NSData class]]);
+}
+
 - (void) setBody:(id)body
 {
-    if (body && ![body isKindOfClass:[NSString class]] && ![NSJSONSerialization isValidJSONObject:body]) {
-        [NSException raise:NSInvalidArgumentException format:@"NSRRequest body is not a valid top-level JSON object (only array or dictionary allowed)."];
+    if (![self bodyIsValid:body]) {
+        [NSException raise:NSInvalidArgumentException format:@"NSRRequest body is not a valid top-level JSON object (only array or dictionary allowed) or NSData object"];
     }
     
     _body = body;
@@ -315,7 +320,6 @@ NSString * const NSRNullRemoteIDException   = @"NSRNullRemoteIDException";
     if (self.body)
     {
         NSData *data;
-      
         if ([self.body isKindOfClass:[NSString class]])
         {
             if (!self.additionalHTTPHeaders[@"Content-Type"]) {
@@ -325,14 +329,20 @@ NSString * const NSRNullRemoteIDException   = @"NSRNullRemoteIDException";
 
             data = [self.body dataUsingEncoding:NSUTF8StringEncoding];
         }
-        else
+        else if ([self.body isKindOfClass:[NSData class]])
         {
+            if (![self.additionalHTTPHeaders[@"Content-Type"] hasPrefix:@"multipart/form-data"]) {
+                [NSException raise:@"NSRRequest Error"
+                            format:@"POST body is data, but no multipart Content-Type header was specified. Please use -[NSRRequest addAttachment:...]"];
+            }
+            data = self.body;
+        } else {
             data = [NSJSONSerialization dataWithJSONObject:self.body options:0 error:nil];
+            [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         }
       
         if (data)
         {
-            [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
             [request setHTTPBody:data];
             [request setValue:@(data.length).stringValue forHTTPHeaderField:@"Content-Length"];
         }

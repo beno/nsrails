@@ -83,6 +83,8 @@
 		59A2AF941586F855002765BA /* MockClasses.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A2AF931586F855002765BA /* MockClasses.m */; };
 		59A2AF9815870580002765BA /* Inflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A2AF9715870580002765BA /* Inflection.m */; };
 		59A2AFA015870EB9002765BA /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A2AF9F15870EB8002765BA /* Config.m */; };
+		D00297731A30862D009EB8B1 /* NSRRequest+Multipart.h in Headers */ = {isa = PBXBuildFile; fileRef = D00297711A30862D009EB8B1 /* NSRRequest+Multipart.h */; };
+		D00297741A30862D009EB8B1 /* NSRRequest+Multipart.m in Sources */ = {isa = PBXBuildFile; fileRef = D00297721A30862D009EB8B1 /* NSRRequest+Multipart.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +161,8 @@
 		59DD17AA155C74890092B048 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		59DD17AE155C74BE0092B048 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		59EC6A671572A24A00AA6D79 /* Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Test.xcdatamodel; sourceTree = "<group>"; };
+		D00297711A30862D009EB8B1 /* NSRRequest+Multipart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRRequest+Multipart.h"; sourceTree = "<group>"; };
+		D00297721A30862D009EB8B1 /* NSRRequest+Multipart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRRequest+Multipart.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +297,8 @@
 				5974F249158FA9A60068B5B8 /* NSRRemoteManagedObject.m */,
 				598D217415800AC2002CC996 /* NSRRequest.h */,
 				598D217515800AC2002CC996 /* NSRRequest.m */,
+				D00297711A30862D009EB8B1 /* NSRRequest+Multipart.h */,
+				D00297721A30862D009EB8B1 /* NSRRequest+Multipart.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -369,6 +375,7 @@
 			files = (
 				5993AF9E1575CD6E00DA25F4 /* NSRails.h in Headers */,
 				5993AFA11575CD6E00DA25F4 /* NSRConfig.h in Headers */,
+				D00297731A30862D009EB8B1 /* NSRRequest+Multipart.h in Headers */,
 				5993AFB01575CD6E00DA25F4 /* NSRRemoteObject.h in Headers */,
 				598D217615800AC2002CC996 /* NSRRequest.h in Headers */,
 			);
@@ -459,7 +466,7 @@
 			name = NSRailsMacCDTests;
 			productName = NSRailsCDTests;
 			productReference = 37B0F4E719A5906A006AFC41 /* NSRailsMacCDTests.xctest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		594764591569F24400C07A62 /* NSRails */ = {
 			isa = PBXNativeTarget;
@@ -531,7 +538,7 @@
 			name = NSRailsCDTests;
 			productName = NSRailsCDTests;
 			productReference = 595B0271158E826F002B23D4 /* NSRailsCDTests.xctest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -710,6 +717,7 @@
 			files = (
 				5993AFA41575CD6E00DA25F4 /* NSRConfig.m in Sources */,
 				5993AFB31575CD6E00DA25F4 /* NSRRemoteObject.m in Sources */,
+				D00297741A30862D009EB8B1 /* NSRRequest+Multipart.m in Sources */,
 				598D217915800AC2002CC996 /* NSRRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
