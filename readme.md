@@ -2,6 +2,12 @@
 
 ***
 
+###About fork
+This fork adds a few capabilities to NSRails:
+- upload of binary files (image upload)
+- parameterized index requests for searches and filters (index.json?foo=bar)
+- ability to overwrite the NSRRemoteObject with result from PUT/UPDATE requests (for optimistic locking environment).
+
 NSRails is a lightweight framework that makes mapping client-side objects to remote Rails objects a breeze, and calling CRUD operations and others super easy. It's accessible while also extremely flexible and customizable, to the point that it'll work with any RESTful server, not just Rails. Also, CoreData support is seamless.
 
 Here's how easy it is to get started. Set the root URL of your app somewhere during launch:
